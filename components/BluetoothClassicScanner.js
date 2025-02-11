@@ -19,24 +19,23 @@ const BluetoothClassicScanner = () => {
   const [devices, setDevices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [connectedDevice, setConnectedDevice] = useState(null);
-  const [viewMode, setViewMode] = useState("scan"); // 'scan' or 'connected'
+  const [viewMode, setViewMode] = useState("scan");
 
+  //Check for necessary android permissions and active connection
   useEffect(() => {
     if (Platform.OS === "android") {
       requestBluetoothPermissions();
     }
     checkForActiveConnection();
 
-    // Cleanup function to run on component unmount
+    //cleanup on umount
     return () => {
-      // Cancel any ongoing discovery
       if (typeof RNBluetoothClassic.cancelDiscovery === "function") {
         RNBluetoothClassic.cancelDiscovery().catch((err) =>
           console.warn("Error canceling discovery on unmount:", err)
         );
       }
 
-      // Disconnect from any connected device
       if (connectedDevice) {
         connectedDevice
           .disconnect()
@@ -47,33 +46,30 @@ const BluetoothClassicScanner = () => {
     };
   }, []);
 
+  //when a device is connected, listen for disconnection events
   useEffect(() => {
     const subscription = RNBluetoothClassic.onDeviceDisconnected((event) => {
-      // If no connectedDevice is present, simply ignore the event.
       if (!connectedDevice) {
         return;
       }
-      
-      // Check if the event's device ID matches the currently connected device.
+
       if (event && event.device && event.device.id === connectedDevice.id) {
         console.log(`Device ${event.device.name} disconnected.`);
         setConnectedDevice(null);
         setViewMode("scan");
         Alert.alert("Disconnected", `${event.device.name} has disconnected.`);
       } else {
-        // Optionally, log the event for debugging if needed
         console.warn(
           "Received onDeviceDisconnected event that does not match the current device:",
           event
         );
       }
     });
-  
+
     return () => {
       subscription.remove();
     };
   }, [connectedDevice]);
-  
 
   const checkForActiveConnection = async () => {
     try {
@@ -145,7 +141,6 @@ const BluetoothClassicScanner = () => {
         return;
       }
 
-      // Check if cancelDiscovery is available before calling it
       if (typeof RNBluetoothClassic.cancelDiscovery === "function") {
         await RNBluetoothClassic.cancelDiscovery();
       } else {
@@ -173,7 +168,7 @@ const BluetoothClassicScanner = () => {
   const connectToDevice = async (device) => {
     setLoading(true);
     try {
-      // Check if the device is already connected
+
       const isConnected = await device.isConnected();
       if (isConnected) {
         setConnectedDevice(device);
@@ -181,7 +176,6 @@ const BluetoothClassicScanner = () => {
         return;
       }
 
-      // Attempt to connect to the device
       await device.connect();
       console.log("Connected to device:", device);
       setConnectedDevice(device);
@@ -208,7 +202,7 @@ const BluetoothClassicScanner = () => {
         Alert.alert("Success", "Successfully disconnected from device.");
         setDevices([]);
       } catch (err) {
-        console.error("Disconnection error:", err); // Log the error
+        console.error("Disconnection error:", err);
         Alert.alert("Error", "Failed to disconnect from device.");
       }
     } else {

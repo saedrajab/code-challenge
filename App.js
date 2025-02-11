@@ -1,15 +1,15 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text } from "react-native";
 import BluetoothClassicScanner from "./components/BluetoothClassicScanner";
 
 const App = () => (
-  <SafeAreaView style={styles.container}>
+  <View style={styles.container}>
     <View style={styles.header}>
       <Image source={require("./assets/prm_logo.png")} style={styles.logo} />
       <Text style={styles.headerText}>Reciept Printer</Text>
     </View>
     <BluetoothClassicScanner />
-  </SafeAreaView>
+  </View>
 );
 
 const styles = StyleSheet.create({

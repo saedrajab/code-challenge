@@ -77,7 +77,7 @@ When you press "Send Reciept" to a connect device (in this test a PC with putty 
 
 Download the android APK from Expo build dashbaord at [https://expo.dev/accounts/saedr/projects/code-challenge/builds/00a864cd-3e41-47b4-a66b-6a07c6849a5a](https://expo.dev/accounts/saedr/projects/code-challenge/builds/00a864cd-3e41-47b4-a66b-6a07c6849a5a) press on install and scan the QR code to start downloading
 
-[Flowchart Diagram of the application](https://www.mermaidchart.com/play?utm_source=mermaid_js&utm_medium=banner_ad&utm_campaign=teams#pako:eNqdlMtT2zAQxv-VHR96y4ErM32YPCBACOTBY-oeVHmTaBCSKymhGYb_vauNbRnK9NBTIvv3fVp9u_JLJm2J2XHW6_UKI61ZqfVxYQDCBp_wGEpcia0OheH3K22f5Ua4AItBhADy70U2D_FJXlVF9gN6vS9wQg9n-GuLPsCJ3mKwNmzgGt2T8l5Z4wk8yE-Y7xPf36B8hJV1kMugdgh9awzSX2tauk9083qAOyURRnZrSjYZxEowgDzosKyJT7BT-DyhU8Ln9PKt55V9ZxsNh7VhR-6lSNUMmRoRtfToQGolHz3MCeFjHJzSUUeMnxI-NOKnxpRMi5wychbTEEaiBmH2YM3aKrOGUnlpd-j2LX7G-JjDDk4hlX8tlMPyr73HTJ63vRo0Xlzp0lQfy85ZdkGyCbo1UjkljJQO2J4Ofu5hkvchL0uHPikvWHkZs6lKEbDlLxXNhDKwHLfsJbOTJkePmjrkQUDbwDraeiJa4YSFVxyX1k1vF7bWlfzT0ldMT1-KbOwb61w7FOW-ccbya5G9HvBpnIsHqjiqrtNBlmMINs0RT0e7x7Qepqi5IU0eAj5VISrqLeLfwdvCbhifUWFp5GG-lRSXX211KmnWLWn-f-M-61S4iBYb-9y5ajB0Ll5BjS7lPGd6STTNTaVFJy-47R5_yeDt-xuBNDYzlKgoCTLntfCwwN9xD6r4nhRT0zSFh7PxH-7QpEpueYO7puOenDrGcRlNaURTuvcseYgSjcJ9kJf_xx1_OHwJDos7XpgjvsIpUnP07QX8RlT0ufTBVtSt7PUPa5WtLQ)
+System analysis: [Flowchart Diagram of the application](https://www.mermaidchart.com/play?utm_source=mermaid_js&utm_medium=banner_ad&utm_campaign=teams#pako:eNqdlMtT2zAQxv-VHR96y4ErM32YPCBACOTBY-oeVHmTaBCSKymhGYb_vauNbRnK9NBTIvv3fVp9u_JLJm2J2XHW6_UKI61ZqfVxYQDCBp_wGEpcia0OheH3K22f5Ua4AItBhADy70U2D_FJXlVF9gN6vS9wQg9n-GuLPsCJ3mKwNmzgGt2T8l5Z4wk8yE-Y7xPf36B8hJV1kMugdgh9awzSX2tauk9083qAOyURRnZrSjYZxEowgDzosKyJT7BT-DyhU8Ln9PKt55V9ZxsNh7VhR-6lSNUMmRoRtfToQGolHz3MCeFjHJzSUUeMnxI-NOKnxpRMi5wychbTEEaiBmH2YM3aKrOGUnlpd-j2LX7G-JjDDk4hlX8tlMPyr73HTJ63vRo0Xlzp0lQfy85ZdkGyCbo1UjkljJQO2J4Ofu5hkvchL0uHPikvWHkZs6lKEbDlLxXNhDKwHLfsJbOTJkePmjrkQUDbwDraeiJa4YSFVxyX1k1vF7bWlfzT0ldMT1-KbOwb61w7FOW-ccbya5G9HvBpnIsHqjiqrtNBlmMINs0RT0e7x7Qepqi5IU0eAj5VISrqLeLfwdvCbhifUWFp5GG-lRSXX211KmnWLWn-f-M-61S4iBYb-9y5ajB0Ll5BjS7lPGd6STTNTaVFJy-47R5_yeDt-xuBNDYzlKgoCTLntfCwwN9xD6r4nhRT0zSFh7PxH-7QpEpueYO7puOenDrGcRlNaURTuvcseYgSjcJ9kJf_xx1_OHwJDos7XpgjvsIpUnP07QX8RlT0ufTBVtSt7PUPa5WtLQ)
 
 To view the actual Reciept label design open [https://labelary.com/viewer.html](https://labelary.com/viewer.html) and replace the code input field with the following then press redraw
 
@@ -112,7 +112,7 @@ To view the actual Reciept label design open [https://labelary.com/viewer.html](
 
 ```
 
-You should see this output ![PRM Reciept Sample](./assets/label.png)
+You should see this output on that link (Note the actual result will include a date like 11.02.2025 not the JS syntax like shown in the Putty output above) ![PRM Reciept Sample](./assets/label.png)
 
 NPM Packages:
 
